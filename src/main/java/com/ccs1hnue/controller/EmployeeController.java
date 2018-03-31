@@ -65,6 +65,7 @@ public class EmployeeController {
 
     @RequestMapping(value = "employee", method = RequestMethod.POST)
     public HttpEntity<?> saveEmployee(@RequestBody Employee e) {
+    	System.out.println(e.toString());
         if (employeeService.employeeExists(e)) {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         } else {

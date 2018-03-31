@@ -4,13 +4,14 @@ import java.io.Serializable;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.hateoas.ResourceSupport;
 
 @Document(collection="employee")
 public class Employee extends ResourceSupport implements Serializable{
 	
 	@Id
-	private String employeeId;
+	private String id;
 	private String firstName;
 	private String lastName;
 	private int age;
@@ -19,18 +20,18 @@ public class Employee extends ResourceSupport implements Serializable{
 
 	public Employee(String employeeId, String firstName, String lastName, int age) {
 		super();
-		this.employeeId = employeeId;
+		this.id = employeeId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
 	}
 	
 	public String getEmployeeId() {
-		return employeeId;
+		return id;
 	}
 
 	public void setEmployeeId(String employeeId) {
-		this.employeeId = employeeId;
+		this.id = employeeId;
 	}
 
 	public String getFirstName() {
@@ -59,7 +60,7 @@ public class Employee extends ResourceSupport implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Employee [employeeId=" + employeeId + ", firstName=" + firstName + ", lastName=" + lastName + ", age="
+		return "Employee [employeeId=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", age="
 				+ age + "]";
 	}
 	

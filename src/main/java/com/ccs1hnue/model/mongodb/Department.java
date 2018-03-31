@@ -12,7 +12,7 @@ import org.springframework.hateoas.ResourceSupport;
 public class Department extends ResourceSupport implements Serializable{
 
 	@Id
-    private String departmentId;
+    private String id;
     private String name;
     private String description;
     @DBRef
@@ -22,18 +22,18 @@ public class Department extends ResourceSupport implements Serializable{
     
     public Department(String departmentId, String name, String description, List<Employee> employees) {
 		super();
-		this.departmentId = departmentId;
+		this.id = departmentId;
 		this.name = name;
 		this.description = description;
 		this.employees = employees;
 	}
 
 	public String getDepartmentId() {
-		return departmentId;
+		return id;
 	}
 
 	public void setDepartmentId(String departmentId) {
-		this.departmentId = departmentId;
+		this.id = departmentId;
 	}
 
 	public String getName() {
@@ -62,7 +62,7 @@ public class Department extends ResourceSupport implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Department [departmentId=" + departmentId + ", name=" + name + ", description=" + description
+		return "Department [departmentId=" +id + ", name=" + name + ", description=" + description
 				+ ", employees=" + employees + "]";
 	}
     

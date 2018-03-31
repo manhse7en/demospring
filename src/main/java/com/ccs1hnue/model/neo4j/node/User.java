@@ -20,4 +20,9 @@ public class User {
 	
 	@Relationship(type="friend")
 	private Friend friend;
+	
+	@SuppressWarnings("unused")
+	public User() {
+		
+	}
 }
